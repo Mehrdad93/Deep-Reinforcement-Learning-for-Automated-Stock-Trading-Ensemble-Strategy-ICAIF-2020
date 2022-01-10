@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import time
-from stable_baselines.common.vec_env import DummyVecEnv
+# from stable_baselines.common.vec_env import DummyVecEnv
 
 # preprocessor
 from preprocessing.preprocessors import *
@@ -11,6 +11,7 @@ from config.config import *
 # model
 from model.models import *
 import os
+
 
 def run_model() -> None:
     """Train the model."""
@@ -38,13 +39,14 @@ def run_model() -> None:
     rebalance_window = 63
     validation_window = 63
     
-    ## Ensemble Strategy
+    # Ensemble Strategy
     run_ensemble_strategy(df=data, 
                           unique_trade_date= unique_trade_date,
                           rebalance_window = rebalance_window,
                           validation_window=validation_window)
 
     #_logger.info(f"saving model version: {_version}")
+
 
 if __name__ == "__main__":
     run_model()

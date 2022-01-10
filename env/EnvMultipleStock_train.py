@@ -23,7 +23,7 @@ class StockEnvTrain(gym.Env):
     """A stock trading environment for OpenAI gym"""
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, df,day = 0):
+    def __init__(self, df, day = 0):
         #super(StockEnv, self).__init__()
         #money = 10 , scope = 1
         self.day = day
